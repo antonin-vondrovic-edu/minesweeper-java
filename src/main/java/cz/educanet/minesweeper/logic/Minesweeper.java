@@ -5,7 +5,7 @@ public class Minesweeper {
     private int rowsCount;
     private int columnsCount;
 
-    public Minesweeper(int rows, int columns) {
+    public Minesweeper(int rows, int columns) { // generate bombs here
         this.rowsCount = rows;
         this.columnsCount = columns;
     }
@@ -21,7 +21,11 @@ public class Minesweeper {
      * @return field type
      */
     public int getField(int x, int y) {
-        return 0;
+        if (x == rowsCount && y == columnsCount) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     /**
@@ -35,6 +39,7 @@ public class Minesweeper {
      * @param y Y
      */
     public void toggleFieldState(int x, int y) {
+        getField(1,1);
     }
 
     /**
@@ -44,6 +49,7 @@ public class Minesweeper {
      * @param y Y
      */
     public void reveal(int x, int y) {
+
     }
 
     /**
@@ -83,6 +89,7 @@ public class Minesweeper {
      * @return remaining bomb count
      */
     public int getRemainingBombCount() {
+
         return 0;
     }
 
@@ -92,6 +99,7 @@ public class Minesweeper {
      * @return if player won
      */
     public boolean didWin() {
+        //return getRemainingBombCount() <= 0;
         return false;
     }
 
@@ -100,8 +108,8 @@ public class Minesweeper {
      *
      * @return if player lost
      */
-    public boolean didLoose() {
-        return false;
+    public boolean didLose() {
+        return false; //isBombOnPosition() == true;
     }
 
     public int getRows() {

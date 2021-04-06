@@ -46,9 +46,9 @@ public class Main {
 
     private static void redraw(Minesweeper logic) {
         if(logic.didWin())
-            JOptionPane.showMessageDialog(null, "You won!");
-        else if(logic.didLoose())
-            JOptionPane.showMessageDialog(null, "You lost!");
+            JOptionPane.showMessageDialog(null, "You won the game!");
+        else if(logic.didLose())
+            JOptionPane.showMessageDialog(null, "You lost the game!");
 
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {
