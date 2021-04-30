@@ -57,21 +57,25 @@ public class Main {
                 cells[i][j].setBackground(Color.darkGray);
                 cells[i][j].setForeground(Color.white);
 
-                if (field == 0) {
+                if(field == 0) {
                     cells[i][j].setText("");
-                } else if (field == 1) {
+                }
+                else if(field == 1) {
                     cells[i][j].setBackground(Color.white);
                     cells[i][j].setForeground(Color.darkGray);
 
                     int bombCount = logic.getAdjacentBombCount(j, i);
-                    if (bombCount > 0) {
+                    if(bombCount > 0) {
                         cells[i][j].setForeground(new Color(bombCount / 8f, 0, 0));
                         cells[i][j].setText(bombCount + "");
-                    } else
+                    }
+                    else
                         cells[i][j].setText("");
-                } else if (field == 2) {
+                }
+                else if(field == 2) {
                     cells[i][j].setText("\uD83D\uDEA9");
-                } else if (field == 3) {
+                }
+                else if(field == 3) {
                     cells[i][j].setText("?");
                 }
             }
